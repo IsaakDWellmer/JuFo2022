@@ -1,10 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sat Jan 15 08:45:55 2022
-
-@author: isaak
-"""
-
 from picamera import PiCamera
 import time
 import RPi.GPIO as GPIO
@@ -61,7 +55,7 @@ for i in range(n):
             right = checkLeftSteering(right_array, white_val)
             left = checkLeftSteering(left_array, white_val)
 
-            #angle = 90
+           
 
             print(1)
 
@@ -72,14 +66,12 @@ for i in range(n):
             else:
                 angle = 90
 
-            #set GPIO numbering mode
+            
             GPIO.setmode(GPIO.BOARD)
 
             GPIO.setup(11,GPIO.OUT)
             servo1=GPIO.PWM(11,50)
-            #11=pin, 50=50Hz pulse
-
-            #start PWM running, but with value of = (pulse off)
+            
             servo1.start(0)
             try:
                 angle=float(angle)
